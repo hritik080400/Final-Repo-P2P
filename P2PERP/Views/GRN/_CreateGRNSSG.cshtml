@@ -68,15 +68,18 @@
                 <span id="invoiceNoError" class="text-danger small fw-semibold"></span>
             </div>
 
-            <!-- 🔹 Invoice Date -->
             <div class="col-md-4">
                 <label class="fw-semibold">Invoice Date:<span class="text-danger">*</span></label>
                 <input type="date"
                        id="txtInvoiceDate"
                        class="form-control form-control-sm bg-white"
-                       max="@DateTime.Now.ToString("yyyy-MM-dd")">
+                       min="@Convert.ToDateTime(ViewBag.PODate).ToString("yyyy-MM-dd")"
+                       max="@DateTime.Now.ToString("yyyy-MM-dd")"
+                       value=""
+                       placeholder="dd-mm-yyyy">
                 <span id="invoiceDateError" class="text-danger small fw-semibold"></span>
             </div>
+
         </div>
     </div>
 
@@ -207,7 +210,9 @@ window.setLoaderTimeout = function(ms) {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-
+    const dateInput = document.getElementById("txtInvoiceDate");
+    dateInput.value = "";  // force clear
+    dateInput.placeholder = "dd-mm-yyyy"; 
     // Defensive: element txtInvoiceDateDisplay may not exist in markup.
     const txtDisplay = document.getElementById("txtInvoiceDateDisplay");
     const txtHidden = document.getElementById("txtInvoiceDate");
