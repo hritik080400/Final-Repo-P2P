@@ -1,5 +1,5 @@
 ﻿<style>
-   /* .circular-glass-btn {
+    /* .circular-glass-btn {
         width: 40px;
         height: 38px;
         border-radius: 5px;
@@ -34,6 +34,13 @@
             content: none !important;
         }
 
+    #currentStockTable thead th {
+        padding: 0.3rem 0.4rem !important;
+    }
+
+    #ViewBin thead th {
+        padding: 0.10rem 0.11rem !important;
+    }
 </style>
 
 <div class="container mt-4 card shadow-sm">
@@ -95,7 +102,7 @@
 
                 <hr />
                 <h5>Bin Details</h5>
-                <table class="table table-sm table-bordered">
+                <table class="table table-sm table-bordered" id="ViewBin">
                     <thead class="table-dark text-center">
                         <tr>
                             <th>Sr.No.</th>

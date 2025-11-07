@@ -15,10 +15,11 @@
         border: none;
         box-shadow: 0 2px 6px rgba(0, 100, 0, 0.35);
     }
-    .circular-glass-btn:hover {
-          background: rgba(0, 180, 0, 0.8);
-          color: #fff !important;
-    } 
+
+        .circular-glass-btn:hover {
+            background: rgba(0, 180, 0, 0.8);
+            color: #fff !important;
+        }
 
     #nonMovingStockTable thead th {
         text-align: center;
@@ -46,6 +47,10 @@
         button.dt-button.processing:after {
             content: none !important;
         }
+
+    #nonMovingStockTable thead th {
+        padding: 0.3rem 0.4rem !important;
+    }
 </style>
 
 
@@ -94,7 +99,7 @@
                     <label for="transferQtyInput" class="form-label fw-bold text-dark">
                         Transfer Quantity: <span class="text-danger">*</span>
                     </label>
-                    <input type="number" id="transferQtyInput" class="form-control form-control-sm  text-dark shadow-sm" min="1"  placeholder="Enter quantity">
+                    <input type="number" id="transferQtyInput" class="form-control form-control-sm  text-dark shadow-sm" min="1" placeholder="Enter quantity">
                     <div class="invalid-feedback"></div>
                 </div>
             </div>
@@ -620,7 +625,7 @@ var nonMovingTable = $('#nonMovingStockTable').DataTable({
             // Proceed with transfer logic here...
             console.log('Transfer', qty, 'items from bin', selectedBin.name);
             transferModal.hide();
-       
+
 
         // ✅ SweetAlert confirmation before AJAX
             Swal.fire({
