@@ -1087,10 +1087,20 @@
 
                             // ✅ Fill PO details
                             $('#poCode').val(po.POCode);
-                            $('#poAddedDate').val(po.AddedDate);
+                            //$('#poAddedDate').val(po.AddedDate);
+                            if (po.AddedDate) {
+                                console.log(po.AddedDate);
+                                $("#poAddedDate").val(moment(po.AddedDate, "YYYY-MM-DD").format("DD/MM/YYYY"));
+                            }
+
                             $('#shippingCharges').val(po.ShippingCharges);
                             $('#rejectedByName').val(po.ApprovedBy);
-                            $('#rejectedDate').val(po.ApprovedRejectedDate);
+                            //$('#rejectedDate').val(po.ApprovedRejectedDate);
+                            if (po.ApprovedRejectedDate) {
+                                console.log(po.ApprovedRejectedDate);
+                                $("#rejectedDate").val(moment(po.ApprovedRejectedDate, "YYYY-MM-DD").format("DD/MM/YYYY"));
+                            }
+
                             $('#rejectedNote').val(po.Note);
 
                             // ✅ Fill Vendor details
