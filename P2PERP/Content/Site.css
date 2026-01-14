@@ -32,14 +32,13 @@
     .photo-content .profile-photo {
         bottom: -75px;
         left: 5%;
-        max-width: 150px;
         position: absolute;
     }
 
-.profile-info {
-    padding: 30px 20px;
-    background: #F7FAFC !important;
-}
+        .profile-info {
+            padding: 30px 20px;
+            background: #F7FAFC !important;
+        }
 
     .profile-info h6 {
         color: black !important;
@@ -87,26 +86,6 @@
         color: #28a745; /* optional hover color */
     }
 
-/* Success Toast Custom Style */
-#toast-container > .toast-success {
-    background-color: #ffffff !important; /* white background */
-    color: #28a745 !important; /* green text */
-    border: 1px solid #28a745; /* optional: green border */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
-}
-
-    /* Optional: change icon color to match text */
-    #toast-container > .toast-success .toast-message {
-        color: #28a745 !important;
-    }
-
-
-        /* Make icon green */
-        #toast-container > .toast-success .toast-message:before,
-        #toast-container > .toast-success .toast-icon {
-            color: #28a745 !important; /* green icon */
-        }
-
 #calendar {
     max-width: 1100px;
     margin: 0 auto;
@@ -122,13 +101,65 @@
 }
 
 .calendar-icon {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s ease;
+    font-size:xx-large;
 }
 
-    .calendar-icon:hover {
-        background: white;
-        border-color: #667eea;
-        transform: translateY(-2px);
+/**/
+
+.form-control, .form-select {
+    border-radius: 0.5rem !important;
+    border: 1px solid #ced4da !important;
+    transition: all 0.3s ease !important;
+}
+
+    .form-control:focus, .form-select:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15) !important;
+        border-color: #86b7fe !important;
     }
+
+.btn {
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+    .btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+
+.card {
+    border: none !important;
+}
+
+.table th {
+    border-top: none !important;
+    font-weight: 600 !important;
+}
+
+.table-responsive {
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+}
+
+/*  Compact Table Row Size */
+.table td, .table th {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.78rem !important;
+    vertical-align: middle !important;
+}
+
+.btn-delete {
+    padding: 2px 6px !important;
+    font-size: 0.70rem !important;
+}
+
+    .btn-delete i {
+        font-size: 0.75rem !important;
+    }
+
+
+@media (max-width: 768px) {
+    .form-control, .form-select, .btn, .table td, .table th {
+        font-size: 0.85rem;
+    }
+}
